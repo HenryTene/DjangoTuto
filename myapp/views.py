@@ -5,24 +5,35 @@ from django.shortcuts import get_object_or_404, render, redirect
 
 
 def index(request):
-    return render(request, 'index.html')
+    title = 'Django Course!!!'
+    return render(request, 'index.html', {
+        'title': title
+    })
 
 
 def about(request):
-    return render(request, 'about.html')
+    username = 'henryttdev'
+    return render(request, 'about.html', {
+        'username': username
+    })
 
 
 def projects(request):
-    projects = list(Project.objects.values())
-   ## return JsonResponse(projects, safe=False)
-    return render(request, 'projects.html')
+    #projects = list(Project.objects.values())
+    #return JsonResponse(projects, safe=False)
+    projects = Project.objects.all()
+    return render(request, 'projects.html', {
+        'projects': projects
+    })
+
 
 def tasks(request):
     # task = get_object_or_404(Task)
     tasks = list(Task.objects.values())
-    #print(tasks)
-    #return JsonResponse(tasks, safe=False)
+    # print(tasks)
+    # return JsonResponse(tasks, safe=False)
     return render(request, 'tasks.html')
+
 
 def tasksById(request, id):
     # task = Task.objects.get(id=id)
