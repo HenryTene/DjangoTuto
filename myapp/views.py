@@ -29,11 +29,15 @@ def projects(request):
 
 def tasks(request):
     # task = get_object_or_404(Task)
-    tasks = list(Task.objects.values())
+    #tasks = list(Task.objects.values())
     # print(tasks)
     # return JsonResponse(tasks, safe=False)
-    return render(request, 'tasks.html')
-
+    tasks = Task.objects.all()
+    print("Resultado" + str(tasks))
+    return render(request, 'tasks.html', {
+        'tasks': tasks
+    })
+   
 
 def tasksById(request, id):
     # task = Task.objects.get(id=id)
