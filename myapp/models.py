@@ -11,5 +11,7 @@ class Task(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    done = models.BooleanField(default=False)
+# Create your models here.
     def __str__(self):
         return self.title + " - " + self.project.name

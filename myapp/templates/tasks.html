@@ -37,16 +37,16 @@
 <body>
     <div class="container">
         <h1>Welcome to Our Tasks page</h1>
-
-
+        <!-- Comentario que si se vera en HTML-->
+        {# Nota: esta es una tarea #}
         <h2>
             {% for task in tasks %}
             <div>
-                <h2>{{task.title}}</h2>
+                <h2>{% if task.done == False %} ⌛  {% else %} ✅ {% endif %}  {{task.title}}</h2>
                 <p>{{task.description}}</p>
                 <h3>Project: {{task.project.name}}</h3>
                 <button>Delete</button>
-                
+                <button>✅ Done </button>
             </div>
             {% endfor %}
         </h2>
