@@ -1,0 +1,35 @@
+<div class="dashboard-page">
+  <header class="dashboard-header">
+    <h1>Dashboard</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Overview</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="dashboard-main">
+    <section class="dashboard-section">
+      <h2>Recent Activity</h2>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </section>
+    <section class="dashboard-section">
+      <h2>Statistics</h2>
+      <ul>
+        <li>Stat 1</li>
+        <li>Stat 2</li>
+        <li>Stat 3</li>
+      </ul>
+    </section>
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="dashboard-footer">
+    <p>&copy; 2024 Dashboard</p>
+  </footer>
+</div>
+

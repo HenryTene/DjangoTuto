@@ -32,6 +32,9 @@
             line-height: 1.6;
         }
     </style>
+     {% extends 'layouts/base2.html' %}
+
+    {% block content %}
 </head>
 
 <body>
@@ -42,7 +45,7 @@
         <h2>
             {% for task in tasks %}
             <div>
-                <h2>{% if task.done == False %} ⌛  {% else %} ✅ {% endif %}  {{task.title}}</h2>
+                <h2>{% if task.done == False %} ⌛ {% else %} ✅ {% endif %} {{task.title}}</h2>
                 <p>{{task.description}}</p>
                 <h3>Project: {{task.project.name}}</h3>
                 <button>Delete</button>
@@ -54,3 +57,5 @@
 </body>
 
 </html>
+
+{% endblock %}
