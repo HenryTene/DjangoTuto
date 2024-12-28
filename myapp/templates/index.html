@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
+   
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,6 +35,7 @@
     </style>
     {% extends 'layouts/base.html' %}
 
+    {% load static %}
     {% block content %}
 
 </head>
@@ -41,6 +43,9 @@
 <body>
     <div class="container">
         <h1>{{title}}</h1>
+
+        <img src="{% static 'free_image.jpeg' %}" alt="" width="400">
+
         <p>This is a simple index page. Feel free to customize it according to your needs.</p>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, a, quae dolores vitae architecto et quis
             eligendi eaque assumenda vero explicabo delectus, aspernatur veritatis numquam corporis? Aliquid delectus
