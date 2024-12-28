@@ -70,4 +70,4 @@ def create_project(request):
         })
     else:
         Project.objects.create(name=request.POST['name'])
-        redirect('projects')
+        return redirect('projects')
